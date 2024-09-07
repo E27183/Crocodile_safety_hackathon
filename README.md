@@ -21,7 +21,9 @@ This project aims to design and develop a comprehensive platform that leverages 
 
 ### Data Collection and Crowdsourcing
 **Crowdsourcing Integration**: The platform encourages users to contribute sightings and other relevant data. Crowdsourced information will be validated by other users and incorporated into the system.
+<br>
 **Social Media Integration**: The platform could integrate with social media to create data points based on hashtags and photos for validation.
+<br>
 **Additional Technologies**: Consideration for integrating additional technologies to improve data accuracy:
  - Cameras: Night vision trail cameras can be strategically placed in key areas to monitor real-time crocodile presence and behaviour.
  + Acoustic Sensors: These sensors can help identify crocodile movements and vocalizations, providing additional data on their activity patterns.
