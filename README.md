@@ -5,7 +5,9 @@ This project aims to design and develop a comprehensive platform that leverages 
 ## Components of the Solution
 ### Front-End Interface
 **Map Integration**: The crocodile alert system will integrate with popular mapping services such as Google Maps or Waze APIs.
+<br>
 **Crocodile Activity Mapping**: The map will feature color-coded areas indicating varying levels of crocodile activity. The color gradient will represent the danger level—e.g., light green for low risk, yellow for moderate risk, and red for high risk.
+<br>
 **User Submissions**: Users can report crocodile sightings via a simple submission form on the platform. This data will be used to update the risk levels and provide real-time information.
 <br>
 **Alert System**: The interface will have an alert system that sends notifications to users about nearby crocodile sightings, changes in risk levels, and important messages from the NT government.
