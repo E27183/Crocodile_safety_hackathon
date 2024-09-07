@@ -3,9 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <title>Crocodile safety</title>
+    <style>
+        body {
+          background-image: url('media/croc_pic.png');
+          background-size:     cover;                      /* <------ */
+          background-repeat:   no-repeat;
+        }
+        label {
+            color: #e25656;
+            font-weight: bold;
+        }
+      </style>
   </head>
+
   <body>
     <label for="place">Location</label>
+
+    <br>
 
     <select name="place" id="place">
       <option value="Borroloola">Borroloola</option>
@@ -14,11 +28,19 @@
       <option value="Nhulunbuy">Nhulunbuy</option>
     </select>
 
+    <br>
+
     <label for="year">Year</label>
+
+    <br>
 
     <input id="year" />
 
+    <br>
+
     <label for="place">Location</label>
+
+    <br>
 
     <select name="mon" id="mon">
       <option value="0.0">January</option>
@@ -35,22 +57,37 @@
       <option value="11.0">December</option>
     </select> 
 
+    <br>
+
     <label for="wl">Water level (metres)</label>
+
+    <br>
 
     <input id="wl" />
 
+    <br>
+
     <label for="tmp">Maximum temperature (celcius)</label>
+
+    <br>
 
     <input id="tmp" />
 
+    <br><br><br>
+
     <button id="go">Get risk index</button>
+
+    <br>
+
+    <p id="result"></p>
 
     <script>
         document.getElementById("go").onclick = () => {
                 var xmlHttp = new XMLHttpRequest();
                 xmlHttp.onreadystatechange = function() { 
                     if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-                        console.log(xmlHttp.responseText);
+                        document.getElementById("result").textContent = "Your risk index is: " + xmlHttp.responseText;
+                        //console.log(xmlHttp.responseText);
                 }
                 xmlHttp.open("GET", `http://localhost:5000/${document.getElementById('place').value}?wl=${document.getElementById('wl').value}&tmp=${document.getElementById('tmp').value}&yr=${document.getElementById('year').value}&mo=${document.getElementById('mon').value}`, true); // true for asynchronous 
                 xmlHttp.send(null);
