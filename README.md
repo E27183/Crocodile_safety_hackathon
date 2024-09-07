@@ -17,8 +17,7 @@ This project aims to design and develop a comprehensive platform that leverages 
  - Water Levels: Seasonal variations in water levels can affect crocodile behaviour. Higher water levels may expand their habitat and increase their movement, while lower water levels might concentrate their activity in specific areas.
  + Temperature: Saltwater crocodiles are highly sensitive to changes in water temperature. Warmer water temperatures typically increase their activity levels, while cooler temperatures may reduce their movement and feeding behaviour.
  + Breeding Seasons: During breeding seasons, crocodile activity may increase.
-<br>
-**Database Management**: A robust data warehouse will store historical sightings, environmental data (water levels and temperature), and user submissions. This data will be used to refine predictions and improve the accuracy of the risk assessment.
++ **Database Management**: A robust data warehouse will store historical sightings, environmental data (water levels and temperature), and user submissions. This data will be used to refine predictions and improve the accuracy of the risk assessment.
 
 ### Data Collection and Crowdsourcing
 **Crowdsourcing Integration**: The platform encourages users to contribute sightings and other relevant data. Crowdsourced information will be validated by other users and incorporated into the system.
