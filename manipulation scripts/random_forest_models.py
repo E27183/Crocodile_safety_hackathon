@@ -1,17 +1,11 @@
 import flask
 from sklearn.ensemble import RandomForestRegressor as forest
-# from sklearn.linear_model import LogisticRegression as forest
 import pandas as pd
+from flask import Flask, request
 import warnings
 warnings.filterwarnings('ignore')
-from flask import Flask, request
 
 dp = "../data/"
-
-h = 0
-t = 60
-yr = 2023
-m = 1
 
 darw_model = forest(n_estimators = 500)
 kath_model = forest(n_estimators = 500)
