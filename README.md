@@ -33,6 +33,12 @@ This project aims to design and develop a comprehensive platform that leverages 
 ## Data Story
 By leveraging the NT Crocodile datasets, we’ve developed a detailed map that showcases regions with high crocodile capture rates. This map visualises the frequency and distribution of crocodile activities across the Northern Territory. Through analysis of these datasets, we can assess and predict risk levels for both visitors and local residents. This approach not only improves crocodile management practices but also significantly enhances overall safety in the Northern Territory.
 
+### Try our demonstration model
+This repository features a working model to predict the expected frequency of crocodile encounters in four Crododile Active Removal Zones. To try it out yourself:
+- Download or clone the repository
+- Ensure you have python installed, as well as all required pip dependencies (flask, scikit-learn, pandas)
+- `cd` into the `manipulation scripts` folder and run the server with `flask --app random_forest_models.py run`
+- Launch `showoff_demo.html` in your browser and fill in the inputs to see the risk index - this is 'on average' how many crocodiles you would expect to find in the removal zone under these conditions
 
 
 
