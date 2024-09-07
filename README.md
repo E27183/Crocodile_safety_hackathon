@@ -29,7 +29,6 @@ This project aims to design and develop a comprehensive platform that leverages 
 + Crocodile Monitoring Survey
 
 ## Data Story
-**Mapping High-Risk Zones**
 By leveraging the NT Crocodile datasets, we’ve developed a detailed map that showcases regions with high crocodile capture rates. This map visualises the frequency and distribution of crocodile activities across the Northern Territory. Through analysis of these datasets, we can assess and predict risk levels for both visitors and local residents. This approach not only improves crocodile management practices but also significantly enhances overall safety in the Northern Territory.
 
 
