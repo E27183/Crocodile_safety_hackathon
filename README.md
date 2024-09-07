@@ -27,6 +27,8 @@ This project aims to design and develop a comprehensive platform that leverages 
 ## Datasets
 - NT Crocodile Capture Zones and Daily Count
 + Crocodile Monitoring Survey
++ Daily Maximum Temperature, Bureau of Meteorology - All years of data; Stations: Borroloola Airport, Darwin Airport, Gove Airport Met Office, Tindal RAAF
++ Measured Water Level, Department of Environment, Parks and Water Security, Northern Territory Government; Locations: Rapid Crk - D/S McMillans Road, Katherine River - Railway Bridge, Mcarthur River - Borroloola Xng
 
 ## Data Story
 By leveraging the NT Crocodile datasets, we’ve developed a detailed map that showcases regions with high crocodile capture rates. This map visualises the frequency and distribution of crocodile activities across the Northern Territory. Through analysis of these datasets, we can assess and predict risk levels for both visitors and local residents. This approach not only improves crocodile management practices but also significantly enhances overall safety in the Northern Territory.
