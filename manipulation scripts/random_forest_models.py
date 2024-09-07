@@ -1,8 +1,10 @@
+import flask
 from sklearn.ensemble import RandomForestRegressor as forest
 # from sklearn.linear_model import LogisticRegression as forest
 import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
+from flask import Flask, request
 
 dp = "../data/"
 
@@ -23,7 +25,6 @@ y = darw_data[["Crocs"]].to_numpy()
 x = darw_data[["Water level", "Temp", "Year", "Month"]].to_numpy()
 
 darw_model.fit(x, y.reshape(-1, 1))
-print(darw_model.predict([[h, t, yr, m]]))
 
 kath_data = pd.read_csv(dp+"Katherine_ml_data.csv")
 kath_data = kath_data[kath_data["Temp"] != -10][kath_data["Water level"] != -10]
@@ -32,7 +33,6 @@ y = kath_data[["Crocs"]].to_numpy()
 x = kath_data[["Water level", "Temp", "Year", "Month"]].to_numpy()
 
 kath_model.fit(x, y.reshape(-1, 1))
-print(kath_model.predict([[h, t, yr, m]]))
 
 nhul_data = pd.read_csv(dp+"Nhulunbuy_ml_data.csv")
 nhul_data = nhul_data[nhul_data["Temp"] != -10]
@@ -41,7 +41,6 @@ y = nhul_data[["Crocs"]].to_numpy()
 x = nhul_data[["Temp", "Year", "Month"]].to_numpy()
 
 nhul_model.fit(x, y.reshape(-1, 1))
-print(nhul_model.predict([[t, yr, m]]))
 
 borr_data = pd.read_csv(dp+"Borroloola_ml_data.csv")
 borr_data = borr_data[borr_data["Temp"] != -10][borr_data["Water level"] != -10]
@@ -50,4 +49,48 @@ y = borr_data[["Crocs"]].to_numpy()
 x = borr_data[["Water level", "Temp", "Year", "Month"]].to_numpy()
 
 borr_model.fit(x, y.reshape(-1, 1))
-print(borr_model.predict([[h, t, yr, m]]))
+
+app = Flask(__name__)
+
+@app.route("/Darwin")
+def darwin():
+    wl = request.args.get('wl')
+    tmp = request.args.get('tmp')
+    yr = request.args.get('yr')
+    mo = request.args.get('mo')
+    res = str(darw_model.predict([[float(wl), float(tmp), float(yr), float(mo)]])[0])
+    resp = flask.Response(res)
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+
+@app.route("/Katherine")
+def kath():
+    wl = request.args.get('wl')
+    tmp = request.args.get('tmp')
+    yr = request.args.get('yr')
+    mo = request.args.get('mo')
+    res = str(kath_model.predict([[float(wl), float(tmp), float(yr), float(mo)]])[0])
+    resp = flask.Response(res)
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+
+@app.route("/Nhulunbuy")
+def nhul():
+    tmp = request.args.get('tmp')
+    yr = request.args.get('yr')
+    mo = request.args.get('mo')
+    res = str(nhul_model.predict([[float(tmp), float(yr), float(mo)]])[0])
+    resp = flask.Response(res)
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp
+
+@app.route("/Borroloola")
+def borr():
+    wl = request.args.get('wl')
+    tmp = request.args.get('tmp')
+    yr = request.args.get('yr')
+    mo = request.args.get('mo')
+    res = str(borr_model.predict([[float(wl), float(tmp), float(yr), float(mo)]])[0])
+    resp = flask.Response(res)
+    resp.headers['Access-Control-Allow-Origin'] = '*'
+    return resp

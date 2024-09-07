@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Crocodile safety</title>
+  </head>
+  <body>
+    <label for="place">Location</label>
+
+    <select name="place" id="place">
+      <option value="Borroloola">Borroloola</option>
+      <option value="Darwin">Darwin</option>
+      <option value="Katherine">Katherine</option>
+      <option value="Nhulunbuy">Nhulunbuy</option>
+    </select>
+
+    <label for="year">Year</label>
+
+    <input id="year" />
+
+    <label for="place">Location</label>
+
+    <select name="mon" id="mon">
+      <option value="0.0">January</option>
+      <option value="1.0">Febuary</option>
+      <option value="2.0">March</option>
+      <option value="3.0">April</option>
+      <option value="4.0">May</option>
+      <option value="5.0">June</option>
+      <option value="6.0">July</option>
+      <option value="7.0">August</option>
+      <option value="8.0">September</option>
+      <option value="9.0">October</option>
+      <option value="10.0">November</option>
+      <option value="11.0">December</option>
+    </select> 
+
+    <label for="wl">Water level (metres)</label>
+
+    <input id="wl" />
+
+    <label for="tmp">Maximum temperature (celcius)</label>
+
+    <input id="tmp" />
+
+    <button id="go">Get risk index</button>
+
+    <script>
+        document.getElementById("go").onclick = () => {
+                var xmlHttp = new XMLHttpRequest();
+                xmlHttp.onreadystatechange = function() { 
+                    if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+                        console.log(xmlHttp.responseText);
+                }
+                xmlHttp.open("GET", `http://localhost:5000/${document.getElementById('place').value}?wl=${document.getElementById('wl').value}&tmp=${document.getElementById('tmp').value}&yr=${document.getElementById('year').value}&mo=${document.getElementById('mon').value}`, true); // true for asynchronous 
+                xmlHttp.send(null);
+        }
+    </script>
+  </body>
+</html>
