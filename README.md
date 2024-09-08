@@ -47,6 +47,9 @@ This repository features a working model to predict the expected frequency of cr
 <br>
 Testing of our model on the Darwin dataset reduced linear error by an average of 11.5% over 10 tests, and is expected to improve with more training data.
 
+## Our Landing Page
+https://sites.google.com/view/govhack-crocodile/home
+
 
 
 
