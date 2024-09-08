@@ -44,6 +44,7 @@ This repository features a working model to predict the expected frequency of cr
 - Ensure you have python installed, as well as all required pip dependencies (flask, scikit-learn, pandas)
 - `cd` into the `manipulation scripts` folder and run the server with `flask --app random_forest_models.py run`
 - Launch `showoff_demo.html` in your browser and fill in the inputs to see the risk index - this is 'on average' how many crocodiles you would expect to find in the removal zone under these conditions
+Testing of our model on the Darwin dataset reduced linear error by an average of 11.5% over 10 tests, and is expected to improve with more training data.
 
 
 
