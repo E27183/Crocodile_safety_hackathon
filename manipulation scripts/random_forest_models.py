@@ -1,11 +1,13 @@
 import flask
 from sklearn.ensemble import RandomForestRegressor as forest
+from sklearn.model_selection import train_test_split as spl
 import pandas as pd
 from flask import Flask, request
+import numpy as np
 import warnings
 warnings.filterwarnings('ignore')
 
-dp = "../data/"
+dp = "../processed_data/"
 
 darw_model = forest(n_estimators = 500)
 kath_model = forest(n_estimators = 500)
